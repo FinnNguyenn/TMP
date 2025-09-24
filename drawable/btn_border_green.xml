@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Khi bấm -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="#E0F2F1"/> <!-- xanh nhạt khi bấm -->
+            <stroke android:width="2dp" android:color="@color/green" />
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+
+    <!-- Bình thường -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/white"/>
+            <stroke android:width="2dp" android:color="@color/green" />
+            <corners android:radius="24dp"/>
+        </shape>
+    </item>
+
+</selector>

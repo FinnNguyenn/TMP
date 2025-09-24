@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <!-- Ảnh món ăn -->
+    <ImageView
+        android:id="@+id/imgFood"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher_foreground"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Nút quay lại -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/white_rectangle_background"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Back"
+        app:backgroundTint="@color/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="@id/imgFood"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Nút yêu thích -->
+    <ImageButton
+        android:id="@+id/btnFavorite"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/white_rectangle_background"
+        android:src="@drawable/ic_favorite"
+        android:contentDescription="favorite"
+        app:tint="@color/colorAccent"
+        app:layout_constraintTop_toTopOf="@id/imgFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"/>
+
+    <!-- Nội dung cuộn -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/imgFood"
+        app:layout_constraintBottom_toTopOf="@id/viewDivider">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Tên món ăn -->
+            <TextView
+                android:id="@+id/txtFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ba chỉ giòn bì"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Thanh chọn Nguyên liệu / Hướng dẫn -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:background="@drawable/search_icon_background"
+                android:padding="4dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/btnInstructions1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Nguyên liệu"
+                    android:backgroundTint="@color/white"
+                    android:textColor="@color/colorAccent"/>
+
+                <Button
+                    android:id="@+id/btnInstructions2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Hướng dẫn"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:textColor="@color/white"/>
+            </LinearLayout>
+
+            <!-- Layout nguyên liệu + hướng dẫn -->
+            <LinearLayout
+                android:id="@+id/layoutIngredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/colorDivider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@color/white"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="
+                            \n1. Luộc thịt
+                            \n  - Thịt ba chỉ mua về bạn cạo sạch lông, rửa sạch để ráo và cắt khúc vừa ăn. Bạn bắc nồi lên bếp, thêm 300 ml nước nấu sôi, sau đó thêm 3 tép hành tím, 3 lát gừng, 1 hoa hồi. Sau đó bạn cho thịt ba chỉ vào luộc, nhưng lưu ý là cho phần da xuống đáy nồi. Bạn luộc 7 phút sau đó vớt thịt ra để nguội.
+                            \n\n2. Ướp gia vị
+                             \n  - Bạn rắc 1 muỗng cà phê muối, 1 muỗng cà phê tiêu, 1/2 muỗng cà phê ngũ vị hương lên đều miếng thịt. Sau đó xoa đều cho gia vị ngấm vào thịt và dùng khăn giấy sạch lau khô phần da.
+                             \n\n3. Xăm da và quét giấm
+                                \n  - Bạn cho 1 muỗng cà phê muối, 2 muỗng cà phê giấm vào chén và đảo đều cho tan muối. Tiếp theo bạn dùng que nhọn hoặc tăm xăm đều lên phần da, rồi lấy chổi quét đều hỗn hợp muối giấm lên phần da miếng thịt. Sau đó bạn dùng máy sấy tóc sấy cho khô trên bề mặt da, bạn lập lại việc quét giấm và sấy khô 4 lần.
+                                \n\n4. Chiên trong nồi chiên không dầu
+                                \n  - Bạn lấy giấy bạc bọc quanh miếng thịt lại chừa phần da. Làm nóng lò trước ở 180 độ C với chế độ Pre-heat và nhấn bắt đầu/start. Khi lò nóng, bạn cho miếng thịt vào nồi chiên không dầu, nướng ở nhiệt độ 180 độ C trong 30 phút. Khi đã đủ thời gian, bạn lấy giấy bạc ra khỏi miếng thịt và tiếp tục nướng thêm 15 phút."
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Ảnh thứ 2 (nếu cần) -->
+            <ImageView
+                android:id="@+id/imgFood2"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/ic_c_foreground"
+                android:layout_marginTop="16dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Thanh điều hướng dưới -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:backgroundTint="@color/white"
+        app:itemIconSize="30dp"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/navigation_menu" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/viewDivider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavView"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
